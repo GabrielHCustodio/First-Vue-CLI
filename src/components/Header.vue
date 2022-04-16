@@ -2,6 +2,7 @@
     <div>
         <ul>
             <li v-for="(l, i) in lista" :key="i"><a href="">{{l.nome}}</a></li>
+            <li v-if="esta_logado"><a href="">Meu perfil</a></li>
         </ul>
     </div>
 </template>
@@ -18,7 +19,8 @@
                     {nome: 'Contato'}
                 ]
             }
-        }
+        },
+        props: ["esta_logado"]
     }
 </script>
 

@@ -1,7 +1,7 @@
 <template>
     <div>
         <h2>Nós informe mais sobre vc</h2>
-        <TecPessoa />
+        <TecPessoa compEmail="bielrique@email.com"/>
         <FormCadastro />
     </div>
 </template>

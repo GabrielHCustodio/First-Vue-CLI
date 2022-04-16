@@ -1,5 +1,5 @@
 <template>
-  <HeaderApp />
+  <HeaderApp :esta_logado="false" />
   <PrimeiroComponente />
   <InfoPessoa />
 </template>
