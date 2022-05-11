@@ -6,10 +6,16 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
+    "electron:build": "vue-cli-service electron:build",
+    "electron:serve": "vue-cli-service electron:serve",
+    "postinstall": "electron-builder install-app-deps",
+    "postuninstall": "electron-builder install-app-deps",
     "start": "node server.js"
   },
+  "main": "background.js",
   "dependencies": {
     "core-js": "^3.8.3",
+    "electron-builder": "^23.0.3",
     "express": "^4.18.1",
     "vue": "^3.2.13"
   },
@@ -19,8 +25,11 @@
     "@vue/cli-plugin-babel": "~5.0.0",
     "@vue/cli-plugin-eslint": "~5.0.0",
     "@vue/cli-service": "~5.0.0",
+    "electron": "^13.0.0",
+    "electron-devtools-installer": "^3.1.0",
     "eslint": "^7.32.0",
-    "eslint-plugin-vue": "^8.0.3"
+    "eslint-plugin-vue": "^8.0.3",
+    "vue-cli-plugin-electron-builder": "~2.1.1"
   },
   "eslintConfig": {
     "root": true,
@@ -35,13 +44,19 @@
       "parser": "@babel/eslint-parser"
     },
     "rules": {
-      "vue/no-static-inline-styles": ["error", {
-        "allowBinding": false
-      }],
-      "vue/no-duplicate-attributes": ["error", {
-        "allowCoexistClass": false,
-        "allowCoexistStyle": true
-      }]
+      "vue/no-static-inline-styles": [
+        "error",
+        {
+          "allowBinding": false
+        }
+      ],
+      "vue/no-duplicate-attributes": [
+        "error",
+        {
+          "allowCoexistClass": false,
+          "allowCoexistStyle": true
+        }
+      ]
     }
   },
   "browserslist": [
