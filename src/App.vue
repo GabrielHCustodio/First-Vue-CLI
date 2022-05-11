@@ -2,7 +2,7 @@
   <HeaderApp :esta_logado="false" />
   <PrimeiroComponente />
   <InfoPessoa />
-  <h1>{{ variavel }}</h1>
+  <h1  :class="classes">{{ variavel }}</h1>
   <a :href="api_link" target="blank">{{name_link}}</a>
   <p>{{ mensagem }}</p>
 </template>
@@ -19,7 +19,8 @@
         variavel: process.env.VUE_APP_MINHA_VARIAVEL,
         name_link: process.env.VUE_APP_API,
         api_link: process.env.VUE_APP_API_LINK,
-        mensagem: process.env.VUE_APP_MENSAGEM
+        mensagem: process.env.VUE_APP_MENSAGEM,
+        classes: "background color"
       }
     },
     components: {
@@ -29,3 +30,13 @@
     }
   }
 </script>
+
+<style scoped>
+.color {
+  color: red;
+}
+
+.background {
+  background-color: green;
+}
+</style>
