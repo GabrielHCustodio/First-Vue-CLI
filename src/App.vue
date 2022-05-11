@@ -2,6 +2,9 @@
   <HeaderApp :esta_logado="false" />
   <PrimeiroComponente />
   <InfoPessoa />
+  <h1>{{ variavel }}</h1>
+  <a :href="api_link" target="blank">{{name_link}}</a>
+  <p>{{ mensagem }}</p>
 </template>
 
 <script>
@@ -11,6 +14,14 @@
 
   export default {
     name: 'App',
+    data() {
+      return {
+        variavel: process.env.VUE_APP_MINHA_VARIAVEL,
+        name_link: process.env.VUE_APP_API,
+        api_link: process.env.VUE_APP_API_LINK,
+        mensagem: process.env.VUE_APP_MENSAGEM
+      }
+    },
     components: {
       HeaderApp,
       PrimeiroComponente,
